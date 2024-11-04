@@ -1,21 +1,25 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 ;
   text-align: center;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  height: 3em;
+  padding: 0.5em;
   will-change: filter;
   transition: filter 300ms;
+  /* position: relative;
+  right: 80%;
+  top: 10%; */
+
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #e65c32f5);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #e20d0dfb);
 }
 
 @keyframes logo-spin {
@@ -40,3 +44,54 @@
 .read-the-docs {
   color: #888;
 }
+
+.header{
+  padding: 10px;
+  background-color: rgba(27, 27, 27, 0.925);
+  width: 100vw;
+  margin: 0;
+  overflow: hidden;
+  height: 20vh;
+  position: relative;
+  top: 0  ;
+  left: 0;
+  text-align: justify;
+
+}
+
+.header p {
+  padding-right: 50px;
+}
+
+.article_list{  
+  padding: 5px;
+  border: 5px;
+}
+
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: left;
+  width: 80%;
+
+  margin: 5px;
+  
+}
+
+.thumbnail{
+  height: 100px;
+  
+}
+
+ul{
+  list-style-type: none;
+  align-items: center; */
+  justify-content: center;
+}
+
+
+
+
+
