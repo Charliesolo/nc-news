@@ -1,6 +1,6 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: auto;
   padding: 0 ;
   text-align: center;
 }
@@ -10,31 +10,12 @@
   padding: 0.5em;
   will-change: filter;
   transition: filter 300ms;
-  /* position: relative;
-  right: 80%;
-  top: 10%; */
-
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #e65c32f5);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #e20d0dfb);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
 }
 
 .card {
@@ -46,37 +27,30 @@
 }
 
 .header{
-  padding: 10px;
+  padding: 20px;
   background-color: rgba(27, 27, 27, 0.925);
-  width: 100vw;
-  margin: 0;
-  overflow: hidden;
+  margin: auto;
   height: 20vh;
   position: relative;
   top: 0  ;
-  left: 0;
   text-align: justify;
-
-}
-
-.header p {
-  padding-right: 50px;
+  width: 75vw;
 }
 
 .article_list{  
   padding: 5px;
   border: 5px;
+  margin: auto;
 }
 
 .card{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 5px;
-  padding: 15px;
-  text-align: left;
+  padding: 10px;
+  text-align: justify;
   width: 80%;
-
-  margin: 5px;
+  margin: auto;
   
 }
 
@@ -86,10 +60,20 @@
 }
 
 ul{
-  list-style-type: none;
-  align-items: center; */
-  justify-content: center;
+  list-style-type: none;  
+  margin: auto;
 }
+
+.article {
+  width: 75vw; 
+  text-align: justify; 
+
+
+}
+.article img{
+  width: 75vw;  
+}
+
 
 
 
