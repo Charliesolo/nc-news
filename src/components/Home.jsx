@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getAllArticles } from '../utils/api-requests'
+import { getArticles } from '../utils/api-requests'
 import ArticleCards from './ArticleCards'
 
 function Home() {
@@ -9,7 +9,7 @@ function Home() {
 
 useEffect(()=>{
     setIsLoading(true)
-    getAllArticles().then(({articles}) => {      
+    getArticles().then(({articles}) => {      
         setArticlesToBrowse(articles)
         setIsLoading(false)
         setError(null)
@@ -17,15 +17,20 @@ useEffect(()=>{
     .catch((error) => {
         setError(error)
     })
-
 }, [])
 
+if(isLoading){
+    return(
+        <p>Loading...</p>
+    )
+}
+
+if(error){
+    
+}
+
   return (
-    <>
-    <ul className='article_list'>
-    <ArticleCards articlesToBrowse={articlesToBrowse}/>
-    </ul>
-    </>
+    <ArticleCards articlesToBrowse={articlesToBrowse}/>    
   )
 }
 
