@@ -7,7 +7,7 @@ import PostComment from './PostComment'
 
 function Comments({article_id}) {
     const [comments, setComments] = useState([])
-    const [commentPosted, setCommentPosted] = useState(false)
+    const [commentsChanged, setCommentsChanged] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
 
@@ -18,7 +18,7 @@ function Comments({article_id}) {
             setComments(comments)
             setIsLoading(false)
             setError(null)
-            setCommentPosted(false)
+            setCommentsChanged(false)
         })
         .catch((error)=>{
             console.log(error)
@@ -26,7 +26,7 @@ function Comments({article_id}) {
             setIsLoading(false)
         }
         )
-    },[article_id, commentPosted])
+    },[article_id, commentsChanged])
 
     if(isLoading){
         return(
@@ -42,8 +42,8 @@ function Comments({article_id}) {
 
 return (
 <section>
-    <PostComment article_id={article_id} setCommentPosted={setCommentPosted}/>
-    <CommentCards comments={comments}/>
+    <PostComment article_id={article_id} setCommentsChanged={setCommentsChanged}/>
+    <CommentCards comments={comments} setCommentsChanged={setCommentsChanged}/>
 </section>
 )
 }

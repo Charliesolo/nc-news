@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom"
 import Votes from "./Votes"
 
+
 function ArticleCard({article}) {
+
+
+
   return (
     <li className='card'> 
     <Link to={`/article/${article.article_id}`}> 
@@ -11,7 +15,8 @@ function ArticleCard({article}) {
     </Link>      
   <h4>User: {article.author}</h4>
   <h3>{article.topic}</h3>
-  <Votes votes={article.votes} id={article.article_id} articlesOrComments='articles'/>     
+  <Votes votes={article.votes} id={article.article_id} articlesOrComments='articles'/>    
+
   </li>
   )
 }
