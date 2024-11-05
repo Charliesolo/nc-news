@@ -10,7 +10,7 @@ function Header() {
   return (    
     <div className='header'>
     <nav >
-        <img className='logo' src={logo} alt="North Coders news Logo, stylized red letters spelling NCN" />
+        <Link to='/'><img className='logo' src={logo} alt="North Coders news Logo, stylized red letters spelling NCN" /></Link>
         <Link to='/'><p>Home</p></Link>
         <p>Welcome {currentUser}</p>
     </nav>

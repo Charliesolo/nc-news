@@ -4,6 +4,7 @@ import { getArticleByID } from "../utils/api-requests";
 import ErrorHandling from "./ErrorHandling";
 import Loading from "./Loading";
 import Comments from "./Comments";
+import Votes from "./Votes";
 
 
 function ArticlePage() {
@@ -49,7 +50,7 @@ return (
         <h4>{articleObj.created_at}</h4>
         <img src={articleObj.article_img_url} alt=""/>
         <p>{articleObj.body}</p>
-        <p>Votes: {articleObj.votes}</p>        
+        <Votes votes={articleObj.votes} id={articleObj.article_id} articlesOrComments='articles'/>       
     </div>
     <Comments article_id={article_id}/>
     </>
