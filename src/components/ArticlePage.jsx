@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getArticleByID } from "../utils/api-requests";
+import ErrorHandling from "./ErrorHandling";
+import Loading from "./Loading";
+import Comments from "./Comments";
 
 
 function ArticlePage() {
@@ -19,6 +22,7 @@ function ArticlePage() {
             setError(null)
         })
         .catch((error)=>{
+            console.log(error)
             setError(error)
             setIsLoading(false)
         })
@@ -26,28 +30,29 @@ function ArticlePage() {
 
     if(isLoading){
         return(
-            <p>Loading...</p>
+            <Loading/>
         )
     }
     
     if(error){
-        
+        return(
+                <ErrorHandling error={error}/>
+            )
     }
-
     
-
-    
-
-
 return (
+    <>
     <div className="article">
         <h2>{articleObj.title}</h2>
         <h3>{articleObj.topic}</h3>
         <h3>{articleObj.author}</h3>
+        <h4>{articleObj.created_at}</h4>
         <img src={articleObj.article_img_url} alt=""/>
         <p>{articleObj.body}</p>
         <p>Votes: {articleObj.votes}</p>        
     </div>
+    <Comments article_id={article_id}/>
+    </>
 )
 }
 
