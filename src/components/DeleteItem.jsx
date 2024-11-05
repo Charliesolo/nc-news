@@ -19,6 +19,7 @@ function DeleteItem({id, articlesOrComments, setCommentsChanged, setArticlesChan
     )
     .catch((err) => {
       setError(err)
+      setIsLoading(false)
     })
 
     if(isLoading){

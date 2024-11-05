@@ -2,7 +2,7 @@
 import ArticleCard from "./ArticleCard"
 
 
-function ArticleCards({articlesToBrowse, setArticlesChanged}) {
+function ArticleCards({articlesToBrowse}) {
 
   ArticleCard
   
