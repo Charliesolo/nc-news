@@ -39,3 +39,11 @@ export function setVotes(id, articleOrComment, incVotes){
         })     
     
 }
+
+export function postComment(articleID, user, comment){
+    return apiClient.post(`/articles/${articleID}/comments`, {"username": user, "body": comment })
+    .then((response) => {
+        console.log(response)
+    })
+
+}

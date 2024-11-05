@@ -75,8 +75,20 @@ ul{
   width: 75vw;  
 }
 
+.container {
 
+  margin: auto;
+  padding: 30px;
+  box-sizing: border-box;
+}
 
+.box {
+  margin: auto;
+  height: 80px;
+  box-sizing: border-box; 
+}
 
-
-
+textarea {
+  margin: auto;
+  width: calc(100% - 80px);
+}
