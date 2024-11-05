@@ -28,3 +28,14 @@ export function getCommentsByArticleID(articleID){
         return data.comments
     })
 }
+
+export function setVotes(id, articleOrComment, incVotes){
+    return apiClient.patch(`/${articleOrComment}/${id}`,{"inc_votes": incVotes}).then(({data}) => { 
+            if(articleOrComment === 'articles'){
+            return data.article.votes}
+            if(articleOrComment === 'comments'){
+            return data.comment.votes
+        }
+        })     
+    
+}

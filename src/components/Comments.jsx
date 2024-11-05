@@ -37,9 +37,7 @@ function Comments({article_id}) {
         )
     }
 
-
 return (
-
 <section>
     <CommentCards comments={comments}/>
 </section>
