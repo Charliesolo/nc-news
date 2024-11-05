@@ -67,6 +67,7 @@ ul{
 .article {
   width: 75vw; 
   text-align: justify; 
+  margin: auto;
 
 
 }

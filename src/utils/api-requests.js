@@ -6,10 +6,10 @@ const apiClient  = axios.create({
 })
 
 export function getArticles(){
-    const params = {
-        id: 12345,
-    }
-    return apiClient.get('/articles?limit=500', params)
+    
+    return apiClient.get('/articles', {params: {
+        limit: 500
+    }})
     .then(({data}) => {
         return data
     })
@@ -19,5 +19,12 @@ export function getArticleByID(articleID){
     return apiClient.get(`/articles/${articleID}`)
     .then(({data}) =>{
         return data.article
+    })
+}
+
+export function getCommentsByArticleID(articleID){
+    return apiClient.get(`/articles/${articleID}/comments`)
+    .then(({data}) =>{
+        return data.comments
     })
 }
