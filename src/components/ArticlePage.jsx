@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { getArticleByID } from "../utils/api-requests";
 import ErrorHandling from "./ErrorHandling";
 import Loading from "./Loading";
@@ -41,11 +41,12 @@ function ArticlePage() {
             )
     }
     
+    
 return (
     <>
     <div className="article">
         <h2>{articleObj.title}</h2>
-        <h3>{articleObj.topic}</h3>
+        <Link to={`/topics/${articleObj.topic}`}><h3>{articleObj.topic}</h3></Link>
         <h3>{articleObj.author}</h3>
         <h4>{articleObj.created_at}</h4>
         <img src={articleObj.article_img_url} alt=""/>

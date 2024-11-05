@@ -2,13 +2,14 @@ import axios from "axios"
 
 const apiClient  = axios.create({
     baseURL: "https://charlies-nc-news.onrender.com/api",
-    timeout: 2000,
+    timeout: 3000,
 })
 
-export function getArticles(){
+export function getArticles(topic){
     
     return apiClient.get('/articles', {params: {
-        limit: 500
+        limit: 500,
+        topic: topic
     }})
     .then(({data}) => {
         return data
@@ -47,4 +48,11 @@ export function postComment(articleID, user, comment){
 export function deleteItem(id, articleOrComment ){
     return apiClient.delete(`/${articleOrComment}/${id}`)
 
+}
+
+export function getAllTopics(){
+    return apiClient.get(`/topics`)
+    .then(({data}) => {
+        return data.topics
+    })
 }

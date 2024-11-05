@@ -12,6 +12,7 @@ function Header() {
     <nav >
         <Link to='/'><img className='logo' src={logo} alt="North Coders news Logo, stylized red letters spelling NCN" /></Link>
         <Link to='/'><p>Home</p></Link>
+        <Link to='/topics'><p>Topics</p></Link>
         <p>Welcome {currentUser}</p>
     </nav>
     </div>    

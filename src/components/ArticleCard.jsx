@@ -13,8 +13,10 @@ function ArticleCard({article}) {
     <img className='thumbnail' src={article.article_img_url} />
   <p>Comments: {article.comment_count}</p>
     </Link>      
-  <h4>User: {article.author}</h4>
-  <h3>{article.topic}</h3>
+  <h3>User: {article.author}</h3>
+  <Link to={`/topics/${article.topic}`}>
+  <h4>Topic: {article.topic}</h4>
+  </Link>
   <Votes votes={article.votes} id={article.article_id} articlesOrComments='articles'/>    
 
   </li>

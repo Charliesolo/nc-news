@@ -30,7 +30,11 @@ function handleSubmit(event){
         setCommentText("")
         setCommentsChanged(true)
 
+    }).catch((err) => {
+        setError(err)
+        setIsLoading(false)
     })
+
 }
 
 if(isLoading){
