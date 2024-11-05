@@ -9,12 +9,14 @@ function Home() {
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
 
+
 useEffect(()=>{
     setIsLoading(true)
     getArticles().then(({articles}) => {      
         setArticlesToBrowse(articles)
         setIsLoading(false)
         setError(null)
+
     })
     .catch((error) => {
         setError(error)
@@ -35,7 +37,7 @@ if(error){
 }
 
   return (
-    <ArticleCards articlesToBrowse={articlesToBrowse}/>    
+    <ArticleCards articlesToBrowse={articlesToBrowse} />    
   )
 }
 

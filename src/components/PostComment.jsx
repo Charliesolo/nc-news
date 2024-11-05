@@ -5,7 +5,7 @@ import { CurrentUserContext } from "../contexts/current-user"
 import { postComment } from "../utils/api-requests"
 
 
-function PostComment({article_id, setCommentPosted}) {
+function PostComment({article_id, setCommentsChanged}) {
     const [commentText, setCommentText] = useState("")
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
@@ -28,7 +28,7 @@ function handleSubmit(event){
         setIsLoading(false)
         setError(null)
         setCommentText("")
-        setCommentPosted(true)
+        setCommentsChanged(true)
 
     })
 }
