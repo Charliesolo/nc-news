@@ -10,6 +10,7 @@ function PostComment({article_id, setCommentsChanged}) {
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
     const {currentUser} = useContext(CurrentUserContext)
+    const [emptyComment, setEmptyComment] = useState(false)
 
 
 useEffect(()=>{
@@ -21,6 +22,11 @@ function handleCommentChange(event){
 }
 
 function handleSubmit(event){
+    if(commentText.length === 0){
+        setEmptyComment(true)
+        return
+    } 
+    setEmptyComment(false)
     setIsLoading(true)
     event.preventDefault()
     postComment(article_id, currentUser,commentText )
@@ -54,10 +60,11 @@ if(error){
     <form action="" onSubmit={handleSubmit}>
         <label htmlFor="comment">Have your say:</label>
             <div>       
-                <textarea  className='box' id='comment' type="text" value={commentText} onChange={handleCommentChange}/>
+                <textarea required={true} className='box' id='comment' type="text" value={commentText} onChange={handleCommentChange}/>
             </div> 
             <button onClick={handleSubmit}>Submit</button>
             <br />
+            {emptyComment? <p>Please write your comment</p> : null}
     </form>
     </div>
   )
