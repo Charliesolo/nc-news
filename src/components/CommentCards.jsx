@@ -1,11 +1,11 @@
 import CommentCard from "./CommentCard"
 
-function CommentCards({comments, setCommentsChanged}) {
+function CommentCards({comments, setCommentDeleted}) {
     
   return (
     <ul className="article_list">
         {comments.map((comment)=>{
-        return <CommentCard comment={comment} key={comment.comment_id} setCommentsChanged={setCommentsChanged}/>
+        return <CommentCard comment={comment} key={comment.comment_id} setCommentDeleted={setCommentDeleted}/>
     })}
     </ul>
   )
