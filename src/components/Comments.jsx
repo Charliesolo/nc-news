@@ -10,6 +10,7 @@ function Comments({article_id}) {
     const [commentsChanged, setCommentsChanged] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
+    const [commentDeleted, setCommentDeleted] = useState(false)
 
     useEffect(()=>{
         setIsLoading(true)
@@ -24,9 +25,10 @@ function Comments({article_id}) {
             console.log(error)
             setError(error)
             setIsLoading(false)
+            setCommentsChanged(false)
         }
         )
-    },[article_id, commentsChanged])
+    },[article_id, commentsChanged, commentDeleted])
 
     if(isLoading){
         return(
@@ -43,7 +45,8 @@ function Comments({article_id}) {
 return (
 <section>
     <PostComment article_id={article_id} setCommentsChanged={setCommentsChanged}/>
-    <CommentCards comments={comments} setCommentsChanged={setCommentsChanged}/>
+    {commentDeleted? <h3>Your comment has been deleted </h3> : null}
+    <CommentCards comments={comments} setCommentDeleted={setCommentDeleted}/>
 </section>
 )
 }

@@ -17,6 +17,7 @@ function ArticleCard({article}) {
   <Link to={`/topics/${article.topic}`}>
   <h4>Topic: {article.topic}</h4>
   </Link>
+  <h5>{article.created_at}</h5>
   <Votes votes={article.votes} id={article.article_id} articlesOrComments='articles'/>    
 
   </li>

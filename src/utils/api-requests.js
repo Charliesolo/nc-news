@@ -2,14 +2,17 @@ import axios from "axios"
 
 const apiClient  = axios.create({
     baseURL: "https://charlies-nc-news.onrender.com/api",
-    timeout: 3000,
+    timeout: 5000,
 })
 
-export function getArticles(topic){
+export function getArticles(topic, sortBy, order, limit, page){
     
     return apiClient.get('/articles', {params: {
-        limit: 500,
-        topic: topic
+        topic: topic,
+        sorted_by: sortBy,
+        order: order,
+        limit: limit,
+        p: page
     }})
     .then(({data}) => {
         return data

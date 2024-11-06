@@ -6,7 +6,6 @@ function ErrorHandling({error}) {
     const[errMsg, setErrMsg]= useState(null)
 
     useEffect(()=>{
-        console.log(error)
         if(error.response){
             setErrMsg(error.response.data.msg)
             setErrStatus(error.response.status)

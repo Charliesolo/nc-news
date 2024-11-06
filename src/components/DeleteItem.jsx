@@ -1,20 +1,21 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { deleteItem } from "../utils/api-requests"
 import Loading from "./Loading"
-import ErrorHandling from "./ErrorHandling"
 
-function DeleteItem({id, articlesOrComments, setCommentsChanged, setArticlesChanged}) {
+
+function DeleteItem({id, articlesOrComments, setCommentDeleted, }) {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
 
   
   function handleClick(){
+    setCommentDeleted(false)
     setIsLoading(true)
     deleteItem(id, articlesOrComments).then(()=>{
       setIsLoading(false)
       setError(null)
-      setCommentsChanged(true)
-      setArticlesChanged(true)
+      setCommentDeleted(true)
+      scrollTo({top:500, behavior: "smooth"})
     }
     )
     .catch((err) => {
