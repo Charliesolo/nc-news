@@ -3,8 +3,6 @@ import logo from '../assets/NCN-logo.png'
 import { Link } from 'react-router-dom'
 import { CurrentUserContext } from '../contexts/current-user'
 
-
-
 function Header() {
     const {currentUser} = useContext(CurrentUserContext)
 
