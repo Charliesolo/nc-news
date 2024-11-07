@@ -10,10 +10,12 @@ function Header() {
   return (    
     <div className='header'>
     <nav >
-        <Link to='/'><img className='logo' src={logo} alt="North Coders news Logo, stylized red letters spelling NCN" /></Link>
-        <Link to='/'><p>Home</p></Link>
-        <Link to='/topics/'><p>Topics</p></Link>
-        <p>Welcome {currentUser}</p>
+      <div className='grid-container'>
+        <Link id='logo-grid' to='/'><img className='logo' src={logo} alt="North Coders news Logo, stylized red letters spelling NCN" /></Link>
+        <p id='user-greet'>Welcome {currentUser}</p>
+        <Link to='/' id='home-link'><p>Home</p></Link>
+        <Link to='/topics/' id='topics-link'><p>Topics</p></Link>
+        </div>
     </nav>
     </div>    
   )

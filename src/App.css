@@ -27,19 +27,56 @@
 }
 
 .header{
+
   padding: 20px;
   background-color: rgba(27, 27, 27, 0.925);
   margin: auto;
-  height: 20vh;
+  height: 15vh;
   position: relative;
   top: 0  ;
   text-align: justify;
   width: 75vw;
 }
 
-.header p{
+.grid-container{
+  display: grid ;
+  grid-template-columns: auto auto auto auto auto;
+
+}
+
+#logo-grid{
+  grid-row: 1;
+  grid-column: 1;
+}
+
+#user-greet{
+
+  grid-row: 2;
+  grid-column: 1;
+}
+
+
+#home-link{
+
+  grid-row: 2;
+  grid-column: 2;
+}
+
+#topics-link{
+
+  grid-row: 2;
+  grid-column: 3;
+}
+
+
+.header a{
   color: #fcf9f9;
 }
+
+a:hover {
+  color: #ca1919;
+}
+
 
 .article_list{  
   padding: 5px;
