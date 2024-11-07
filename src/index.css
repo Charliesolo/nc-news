@@ -46,4 +46,13 @@ h1 {
   button {
     background-color: #f9f9f9;
   }
+  .card{
+    background-color: aliceblue;
+  }
+  .sort-bar{
+    background-color: aliceblue;
+  }
+  .page-nav{
+    background-color: aliceblue;
+  }
 }
