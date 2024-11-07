@@ -4,6 +4,8 @@ A deployed version of the site can be found here:
 
 https://ncnewscharlie.netlify.app/
 
+**Please note, due to the free service used to host the API the website can sometimes be unresponsive on first load as the API spins down with inactivity. If you get a timeout error please wait a minute and then refresh.**
+
 This website is a news site that allows browsing all articles, browsing by topic, sorting articles, posting  comments and voting on comments and articles.
 
  The site was built to provide a front end to make use of the API I built which can be found here: 
