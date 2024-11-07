@@ -59,3 +59,21 @@ export function getAllTopics(){
         return data.topics
     })
 }
+
+export function postArticle(author, title, body, topic, image_url){
+    const articleObj = {author: author, 
+        title: title,
+        body: body,
+        topic: topic,
+        }
+    if(image_url){
+        articleObj.article_img_url = image_url
+    }
+    
+    return apiClient.post('/articles', articleObj
+        
+    )
+    .then(({data})=>{
+        return data.article
+    })
+}

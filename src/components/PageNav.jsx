@@ -8,11 +8,11 @@ function PageNav({page, setPage, limit, numOfArticles}) {
     const[totalPages, setTotalPage] = useState(Math.ceil(numOfArticles/limit))
 
     useEffect(()=>{
+        setTotalPage(Math.ceil(numOfArticles/limit))
         if(page>totalPages){
             setPage(1)
         }
-    }, [])
-
+    }, [limit])
 
     function handleFirstPage(event){
         event.preventDefault()

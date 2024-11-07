@@ -3,8 +3,9 @@ import logo from '../assets/NCN-logo.png'
 import { Link } from 'react-router-dom'
 import { CurrentUserContext } from '../contexts/current-user'
 
-function Header() {
 
+
+function Header() {
     const {currentUser} = useContext(CurrentUserContext)
 
   return (    
@@ -15,6 +16,7 @@ function Header() {
         <p id='user-greet'>Welcome {currentUser}</p>
         <Link to='/' id='home-link'><p>Home</p></Link>
         <Link to='/topics/' id='topics-link'><p>Topics</p></Link>
+        <Link to='/article/post' id='post-link'><p>Post an Article</p></Link>
         </div>
     </nav>
     </div>    

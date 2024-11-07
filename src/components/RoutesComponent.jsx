@@ -5,6 +5,7 @@ import { useState } from 'react'
 import NotFoundPage from './NotFoundPage'
 import Topics from './Topics'
 import ArticlePage from './ArticlePage'
+import PostArticle from './PostArticle'
 
 function RoutesComponent() {
 
@@ -24,6 +25,7 @@ function RoutesComponent() {
                 setArticlesToBrowse={setArticlesToBrowse}                      
             />}/> 
         <Route path='/article/:article_id' element={<ArticlePage/>}/>
+        <Route path='/article/post' element={<PostArticle/>}/>
         <Route path='/*' element={<NotFoundPage/>}/> 
     </Routes>
   )

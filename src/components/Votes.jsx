@@ -20,7 +20,7 @@ function Votes({votes, id, articlesOrComments}) {
         .then((votes)=> {
             setCurrentVotes(votes)
         })
-    }, [currentVotes ])
+    }, [currentVotes])
 
 function handelUpVote(){
     if(downVoteClicked){
