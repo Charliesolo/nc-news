@@ -37,6 +37,10 @@
   width: 75vw;
 }
 
+.header p{
+  color: #fcf9f9;
+}
+
 .article_list{  
   padding: 5px;
   border: 5px;
