@@ -9,11 +9,15 @@ import SortBar from "./SortBar"
 import PageNav from "./PageNav"
 
 
-function TopicPage({articlesToBrowse, setArticlesToBrowse, sortBy, setSortBy, order, setOrder, limit, setLimit, page, setPage}) {
+function TopicPage({articlesToBrowse, setArticlesToBrowse }) {
     const {topic_slug} = useParams()
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
     let [searchParams, setSearchParams] = useSearchParams()
+    const [sortBy, setSortBy] = useState("created_at")
+    const [order, setOrder] = useState("desc")
+    const [limit, setLimit] = useState(5)
+    const [page, setPage] = useState(1)
 
     let queries = [...searchParams]
 
@@ -39,7 +43,7 @@ function TopicPage({articlesToBrowse, setArticlesToBrowse, sortBy, setSortBy, or
         })
     }, [sortBy, order, limit, page])
 
-        // useEffect(()=>{processURL(queries)}, [])
+        useEffect(()=>{processURL(queries)}, [])
 
     if(isLoading){
         return(

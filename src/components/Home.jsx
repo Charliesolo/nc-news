@@ -8,10 +8,14 @@ import { useSearchParams } from 'react-router-dom'
 import PageNav from './PageNav'
 
 
-function Home({articlesToBrowse, setArticlesToBrowse, sortBy, setSortBy, order, setOrder, limit, setLimit, page, setPage}) {
+function Home({articlesToBrowse, setArticlesToBrowse}) {
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
     let [searchParams, setSearchParams] = useSearchParams()
+    const [sortBy, setSortBy] = useState("created_at")
+    const [order, setOrder] = useState("desc")
+    const [limit, setLimit] = useState(5)
+    const [page, setPage] = useState(1)
     
 
     let queries = [...searchParams]
@@ -40,7 +44,7 @@ useEffect(()=>{
     })
 }, [sortBy, order, limit, page])
 
-// useEffect(()=>{processURL(queries)}, [])
+useEffect(()=>{processURL(queries)}, [])
 
 if(isLoading){
     return(

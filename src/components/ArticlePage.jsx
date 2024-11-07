@@ -12,6 +12,7 @@ function ArticlePage() {
     const [articleObj, setArticleObj] = useState({})
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
+    
 
     useEffect(()=>{
         window.scrollTo(0,0)
