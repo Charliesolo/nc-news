@@ -26,6 +26,7 @@
 
   padding: 20px;
   background-color: rgb(27, 27, 27);
+  margin-top: 0%;
   margin: auto;
   height: 15vh;
   position: relative;
@@ -50,7 +51,6 @@
   grid-row: 2;
   grid-column: 1;
 }
-
 
 #home-link{
   grid-row: 2;
@@ -223,3 +223,115 @@ button:focus-visible {
   width: 80%;
   margin: auto;
 }
+
+@media only screen and (max-width: 500px) {
+  [class="header"]{
+    height: 200px;
+    width: 500px;
+  }
+  [class="grid-container"]{
+    display: grid;
+    grid-template-columns: 25% 25% 25% ;
+    grid-template-rows:auto auto auto auto auto auto ;
+  }
+
+  #logo-grid{
+    grid-row: 1;
+  }
+
+  #user-greet{
+    grid-row: 2;
+  }
+
+  #home-link{
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  #topics-link{
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  #post-link{
+    grid-row: 3;
+    grid-column: 3;
+  } 
+
+  .sort-bar{
+    display: flex-box;
+    max-width: 80%;
+    margin: 0%;
+    padding: 5%;
+    display: grid;
+  }
+
+  .sort-bar select{
+    max-width: 80%;
+  }
+
+  .card{
+    margin: 0%;
+  }
+
+  .thumbnail{
+    float: none;
+  }
+
+  .page-nav{
+    margin: 0%;
+    }
+  .page-nav p{
+    margin-top: 0%;
+    margin-bottom: 10%;
+    }
+  
+}
+
+@media screen and (max-height: 500px) {
+  #root{
+    margin: 0%;
+  }
+
+  .header{
+    height: auto;
+    width: 100%;
+    margin: 0%;
+    position: relative;
+
+
+  }
+
+  .sort-bar{
+    display: flex-box;
+    max-width: 80%;
+    margin: 0%;
+    padding: 5%;
+    display: grid;
+  }
+
+  .sort-bar select{
+    max-width: 80%;
+  }
+
+  .card{
+    margin: 0%;
+  }
+
+  .thumbnail{
+    float: none;
+  }
+
+  .page-nav{
+    margin: 0%;
+    }
+  .page-nav p{
+    margin-top: 0%;
+    margin-bottom: 10%;
+    }
+  
+}
+
+
+
+
