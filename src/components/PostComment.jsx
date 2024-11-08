@@ -3,9 +3,10 @@ import Loading from "./Loading"
 import ErrorHandling from "./ErrorHandling"
 import { CurrentUserContext } from "../contexts/current-user"
 import { postComment } from "../utils/api-requests"
+import { toast } from "react-toastify"
 
 
-function PostComment({article_id, setCommentsChanged}) {
+function PostComment({article_id, setCommentsChanged, setCommentDeleted}) {
     const [commentText, setCommentText] = useState("")
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
@@ -27,6 +28,8 @@ function handleSubmit(event){
         return
     } 
     setEmptyComment(false)
+    setCommentsChanged(false)
+    setCommentDeleted(false)
     setIsLoading(true)
     event.preventDefault()
     postComment(article_id, currentUser,commentText )
@@ -35,6 +38,7 @@ function handleSubmit(event){
         setError(null)
         setCommentText("")
         setCommentsChanged(true)
+        setCommentDeleted(false)
 
     }).catch((err) => {
         setError(err)
