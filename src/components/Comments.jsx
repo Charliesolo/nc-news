@@ -4,6 +4,8 @@ import Loading from './Loading'
 import ErrorHandling from './ErrorHandling'
 import CommentCards from './CommentCards'
 import PostComment from './PostComment'
+import { ToastContainer, toast } from 'react-toastify'
+
 
 function Comments({article_id}) {
     const [comments, setComments] = useState([])
@@ -19,7 +21,13 @@ function Comments({article_id}) {
             setComments(comments)
             setIsLoading(false)
             setError(null)
-            setCommentsChanged(false)
+            if(commentDeleted){
+                toast("Your comment has been deleted")
+            }
+            if(commentsChanged){
+                toast("Your comment has been posted")
+            }
+
         })
         .catch((error)=>{
             console.log(error)
@@ -41,12 +49,15 @@ function Comments({article_id}) {
             <ErrorHandling error={error}/>
         )
     }
+    
 
 return (
 <section>
-    <PostComment article_id={article_id} setCommentsChanged={setCommentsChanged}/>
-    {commentDeleted? <h3>Your comment has been deleted </h3> : null}
-    <CommentCards comments={comments} setCommentDeleted={setCommentDeleted}/>
+    
+    <PostComment article_id={article_id} setCommentsChanged={setCommentsChanged} setCommentDeleted={setCommentDeleted}/>
+    <CommentCards comments={comments} setCommentDeleted={setCommentDeleted} setCommentsChanged={setCommentsChanged}/>
+    <ToastContainer/>
+
 </section>
 )
 }

@@ -3,7 +3,7 @@ import { CurrentUserContext } from "../contexts/current-user"
 import { useContext } from "react"
 import DeleteItem from "./DeleteItem"
 
-function CommentCard({comment, setCommentDeleted}) {
+function CommentCard({comment, setCommentDeleted, setCommentsChanged}) {
 
   const {currentUser} = useContext(CurrentUserContext)
 
@@ -13,7 +13,7 @@ function CommentCard({comment, setCommentDeleted}) {
         <p> {comment.body}</p>
         <p >{comment.created_at}</p>
         <Votes votes={comment.votes} id={comment.comment_id} articlesOrComments='comments'/>
-        {currentUser === comment.author? <DeleteItem id={comment.comment_id} articlesOrComments = 'comments' setCommentDeleted={setCommentDeleted} /> : null}
+        {currentUser === comment.author? <DeleteItem id={comment.comment_id} articlesOrComments = 'comments' setCommentDeleted={setCommentDeleted} setCommentsChanged={setCommentsChanged}/> : null}
     </li>
   )
 }
