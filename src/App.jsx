@@ -9,7 +9,8 @@ function App() {
 
   return (
     <>
-      <Header/>      
+      <Header/>
+      <div className='spacing-div'/>      
       <RoutesComponent/>
       
     </>
