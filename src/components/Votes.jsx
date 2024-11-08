@@ -71,7 +71,6 @@ function handleDownVote(){
     })    
 }
 
-
   return (
       <div><h4>Votes: {currentVotes}</h4>      
     <button onClick={handleUpVote} className={upVoteClass} >+1</button>
