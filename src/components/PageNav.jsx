@@ -39,10 +39,10 @@ function PageNav({page, setPage, limit, numOfArticles}) {
 
   return (
     <div className="page-nav">
-        <input type="image" className="nav-button" alt="Go to first page" src={firstPage} onClick={handleFirstPage}/>
-        <input type="image" className="nav-button" alt="Go to previous page" src={previousPage} onClick={handlePreviousPage}/>
-        <input type="image" className="nav-button" src={nextPage} alt="Go to next page" onClick={handleNextPage}/>
-        <input type="image" className="nav-button" alt="Go to last page" src={lastPage} onClick={handleLastPage}/>
+        <input type="image" className={page === 1? "disabled-nav-button": "nav-button"} alt="Go to first page" src={firstPage} onClick={handleFirstPage}/>
+        <input type="image" className={page === 1? "disabled-nav-button": "nav-button"} alt="Go to previous page" src={previousPage} onClick={handlePreviousPage} disabled={page === 1}/>
+        <input type="image" className={page === totalPages ? "disabled-nav-button": "nav-button"} src={nextPage} alt="Go to next page" onClick={handleNextPage} />
+        <input type="image" className={page === totalPages ? "disabled-nav-button": "nav-button"} alt="Go to last page" src={lastPage} onClick={handleLastPage} />
 
         <p>Page {page} of {totalPages}</p></div>
   )
